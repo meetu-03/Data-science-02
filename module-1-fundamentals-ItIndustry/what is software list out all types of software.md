@@ -31,9 +31,8 @@ System software manages and controls computer hardware and provides a platform f
 
 ### Examples
 
-- :contentReference[oaicite:0]{index=0}
-- :contentReference[oaicite:1]{index=1}
-- :contentReference[oaicite:2]{index=2}
+- oprating systeam
+- firm ware
 - Device Drivers
 - Utility Programs
 
@@ -45,12 +44,9 @@ Application software is designed to help users perform specific tasks.
 
 ### Examples
 
-- :contentReference[oaicite:3]{index=3}
-- :contentReference[oaicite:4]{index=4}
-- :contentReference[oaicite:5]{index=5}
-- :contentReference[oaicite:6]{index=6}
-- :contentReference[oaicite:7]{index=7}
-- :contentReference[oaicite:8]{index=8}
+-microsoft word
+-microsoft exel
+-chrome
 
 ---
 
@@ -60,9 +56,9 @@ Programming software helps developers create, test, and maintain applications.
 
 ### Examples
 
-- :contentReference[oaicite:9]{index=9}
-- :contentReference[oaicite:10]{index=10}
-- :contentReference[oaicite:11]{index=11}
+- vs code
+- interpreter
+- assembler
 - Compilers
 - Debuggers
 
