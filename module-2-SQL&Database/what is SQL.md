@@ -139,6 +139,56 @@
      5. price
      6. descriptions
      7. added_date
+# SQL data types ............ 
+
+  ## Numeric Data Types
+  
+| Data Type | Size | Description |
+|-----------|------|-------------|
+| `TINYINT` | 1 Byte | Stores very small whole numbers (-128 to 127 or 0 to 255). |
+| `SMALLINT` | 2 Bytes | Stores small whole numbers. |
+| `INT` / `INTEGER` | 4 Bytes | Stores standard whole numbers. |
+| `BIGINT` | 8 Bytes | Stores very large whole numbers. |
+| `DECIMAL(p,s)` | 5–17 Bytes* | Stores exact decimal values with specified precision and scale. |
+| `FLOAT` | 4 Bytes | Stores approximate single-precision floating-point numbers. |
+| `DOUBLE` | 8 Bytes | Stores approximate double-precision floating-point numbers. |
+
+
+## Character/String Data Types
+
+| Data Type | Size | Description |
+|-----------|------|-------------|
+| `CHAR(n)` | Fixed (`n` Bytes) | Stores fixed-length character strings. |
+| `VARCHAR(n)` | Variable (up to `n` Bytes + 1–2 Bytes overhead) | Stores variable-length character strings. |
+| `TEXT` | Up to 65,535 Bytes | Stores large amounts of text. |
+
+
+
+## Date and Time Data Types
+
+| Data Type | Size | Description |
+|-----------|------|-------------|
+| `DATE` | 3 Bytes | Stores a date (`YYYY-MM-DD`). |
+| `TIME` | 3 Bytes | Stores a time (`HH:MM:SS`). |
+| `DATETIME` | 8 Bytes | Stores both date and time. |
+| `TIMESTAMP` | 4–8 Bytes | Stores date and time, often with automatic timestamp updates. |
+
+
+
+## Boolean Data Type
+
+| Data Type | Size | Description |
+|-----------|------|-------------|
+| `BOOLEAN` | 1 Byte | Stores `TRUE` or `FALSE` values. |
+
+
+
+## Enumerated Data Types
+
+| Data Type | Size | Description |
+|-----------|------|-------------|
+| `ENUM` | Fixed (`n` Bytes) | Stores fixed-length binary data with multiple choices data. |
+
 
 
 
@@ -167,3 +217,66 @@
      alter table tbl_users change state statename varchar(255)
      
      ```
+4. alter will also drop the columnname 
+
+     ```
+     
+     alter table tbl_employee drop added_date_time;
+
+     ```   
+
+  5. alter create a unique columns 
+
+    ```
+     alter table tbl_employee add unique(`email`);
+    ```   
+
+
+# how to rename a table name after create any tables 
+
+  ```
+  rename table tbl_appointment to appointment;
+  or
+  rename table tbl_employee to employee;
+  or
+  rename table tbl_users to users;
+  ```
+
+
+# drop :  drop is used to delete database or table or any columnname of table 
+
+  1. how to drop database
+
+    ```
+     drop database databasename
+     or
+     drop database data_science_app;
+    ```
+
+
+  
+  2. how to drop table
+
+    ```
+     drop table tablename
+     or
+     drop table appointment;
+    ```
+
+  3. how to drop a columnname of tables 
+
+    ```
+   alter table tbl_employee drop added_date_time;
+
+    ```  
+
+
+# truncate :  truncate is used to delete all data from tables after truncate data never rollback
+
+          ```
+
+          truncate table tablename;
+          or
+          truncate table tbl_employee
+
+        ```
