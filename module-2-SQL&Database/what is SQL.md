@@ -280,3 +280,180 @@
           truncate table tbl_employee
 
         ```
+# what is DML (data manipulate language) ?
+
+1. DML stands for data manipulation language 
+2. it is used to manipulate data after creating tables 
+3. DML handel insert | delete and update data 
+
+## DML query are 
+
+1. insert
+- insert a single or multiple rows in tables 
+- how to add or insert single data 
+- examples 
+```
+insert into tablename(columnname) values('value');
+or 
+insert into tbl_categories(categoryname) value('electronics')
+or
+insert into tbl_employee(name,upload_photo,age,phone,salary,attendance,status,email) value('meet','meet.jpg',21,912221545,15500,1,'pending','meet@gmail.com');
+```   
+
+- how to add multiple data
+- examples ......
+
+```
+insert into tbl_employee(name,upload_photo,age,phone,salary,attendance,status,email) values('brijesh','brijesh.jpg',31,912821545,155000,1,'pending','brijesh@gmail.com'),('pranav','pranav.jpg',31,982221545,17500,1,'pending','pranav@gmail.com');
+
+or
+
+
+insert into tbl_employee values(null,'forum','forum.jpg',21,652821545,14000,1,'pending','forum@gmail.com'),(null,'astha','astha.jpg',21,982221545,17500,1,'pending','astha@gmail.com');
+
+```
+2. delete 
+ - delete is used to delete data 
+ - delete are used to delete all data from tables 
+ - delete are used to delete particular data using where clause
+ - delete are used to delete range of  data from tables
+ - delete are used to delete alternate of data from tables     
+
+## query are ....
+
+ ```
+ delete from tbl_employee   (delete all rows from tables)
+ delete from tbl_employee where empid=1 (delete particular 1 data from table)
+ delete from tbl_employee where empid in (1,3,5,7);  (alternate delete)
+ delete from tbl_employee where empid between 500 and 1000; (range of data delete)
+
+ ``` 
+# note : after delete rows of data from tables we cam rollback data 
+
+  
+3. update :
+
+   - update is used to update rows or data from tables 
+   - update is used to update particulars data from tables using where clause
+   - examples are ....
+
+   ```
+   update tbl_employee set name='kumar',upload_photo='kumar.png',age=33,phone=634545845,salary=18500,attendance=0,status='completed',email='kumar007@gmail.com' where empid=4;
+   ```
+
+
+
+# what is DQL (data query language) ?
+
+  - DQL stands for data query language 
+  - DQL is used to select data or fetch data  
+  - DQL query are ...
+
+    1. select  (select all data)
+       
+       ```
+       select * from tbl_employee
+       ```
+
+    2. select  (select particular 1 data)
+       
+       ```
+       select * from tbl_employee where empid=4
+       ```
+
+   
+    3. select  (select particular range of data)
+       
+       ```
+       select * from tbl_employee where empid between 1 and 5;
+       ```    
+    
+    4. select  (select particular alternate of data)
+       
+       ```
+       select * from tbl_employee where empid in (1, 2, 4, 7);
+       ```    
+
+    5. select  (select particular columnname of data)
+       
+       ```
+       select empid,name,salary from tbl_employee;
+       ```    
+
+    
+    6. select  (select particular with name of data)
+       
+       ```
+       select * from tbl_employee where name='kumar';
+       ```    
+    
+    7. select  (select name is ascending order or descending order)
+       
+       # order by  : filter in asc and desc order
+       ```
+       select * from tbl_employee  order by name asc;
+       or
+       select * from tbl_employee  order by name;
+       or
+       select * from tbl_employee  order by name desc;
+       ```    
+
+# TCL : stands for transanctional control language
+
+  - TCL is used to rollback data from table
+  - TCL is also used to commit data from table 
+  - TCL query are .....
+
+    1. commit
+    2. rollback  
+
+## commit ....
+
+   - commit is used to start transaction and commit(save) data before delete
+   - commit is always used before delete data from tables 
+  - how to commit data before delete 
+  
+   # commit .....
+
+   ```
+    START TRANSACTION;
+    delete from tbl_employee where empid=7;
+    COMMIT; 
+   ```  
+
+
+# rollback : 
+
+  - rollback start transaction and rollback data 
+  - rollback are used to rollback data in tables after delete 
+  - rollback query are ...
+
+  ## rollback ...
+
+    ```
+    START TRANSACTION;
+    delete from tbl_employee
+    WHERE empid=7;
+    SELECT * FROM tbl_employee WHERE empid=7;
+    ROLLBACK;
+    SELECT * FROM tbl_employee WHERE empid = 7;
+
+    ``` 
+
+# Note : some database structures not support rollback and commit   
+
+# key constraints :  
+
+  - key constraints provides limit on tables 
+  - key constraints used to provides normalized tables 
+  - key constraints are used to provides relationship between tables 
+
+  ## types of key constraints
+
+  1. primary key 
+  2. unique key 
+  3. foreign key  
+
+   
+    
+
