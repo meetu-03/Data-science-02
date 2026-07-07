@@ -457,3 +457,292 @@ insert into tbl_employee values(null,'forum','forum.jpg',21,652821545,14000,1,'p
    
     
 
+# key constraints :  
+
+  - key constraints provides limit on tables 
+  - key constraints used to provides normalized tables 
+  - key constraints are used to provides relationship between tables 
+
+## types of key constraints
+
+  1. primary key 
+  2. unique key 
+  3. foreign key  
+
+
+# primary key   :
+
+  - A pk is never stored null values 
+  - A pk never repeated only provides one times in a table
+  - A pk is always auto_increments 
+  - A pk stored unique values 
+  
+   **examples**
+
+| uid(pk) | Name   | Salary | age |
+|---------|--------|--------|-----|
+| 1       |Brijesh | 85000  | 35  |
+
+
+
+
+# unique key   :
+
+  - A uk is never at list one time stored a null  values 
+  - A uk repeated more than one columns
+  - A uk is never stored a dublicate values 
+ 
+  
+   **examples**
+
+| uid(pk) | Name   | Salary | age | email(uk)   | phone(uk) |
+|---------|--------|--------|-----|-------------|-----------|
+| 1       |Brijesh | 85000  | 35  | b@gmail.com |9173357217 |
+
+
+   **syntax of SQL to create unique key**
+
+   ```
+   alter table user add unique(`email`);
+   or
+   alter table user add unique(`phone`);
+
+   ```
+
+# foreign key   :
+
+  - A fk is never stored null values 
+  - A fk repeated more than one columns
+  - A fk is  can be  stored a dublicate values
+  - A fk is provides relationship between one table to another table  
+  - A fk provides relationship b/w one tables to another table using common field
+ 
+  
+**examples**
+
+**country**
+
+| cid(pk) | cname     |
+|---------|-----------|
+| 1       |India      |
+| 2       |USA        |
+| 3       |UK         |
+| 4       |Australia  |
+
+
+**users**
+
+| uid(pk) | Name   | Salary | age | email(uk)   | phone(uk) |cid(fk)|
+|---------|--------|--------|-----|-------------|-----------|-------|
+| 1       |Brijesh | 85000  | 35  | b@gmail.com |9173357217 | 1     |
+| 2       |Meet    | 75000  | 35  | m@gmail.com |9173357817 | 3     |
+| 3       |Kumar   | 35000  | 35  | k@gmail.com |9173357917 | 4     |
+| 4       |lokesh  | 45000  | 35  | l@gmail.com |9173357117 | 2     |
+
+
+**syntax of SQL to create table with foreign key**
+
+   ```
+   create table music_streaming_app.country
+   (
+   cid int  auto_increment primary key,
+   cname varchar(255)  
+   )
+
+   ```
+
+   ```
+   create table music_streaming_app.users
+  (
+  uid int  auto_increment primary key,
+  uname varchar(255),
+  gender varchar(255),
+  phone bigint,
+  pincode int, 
+  address text,
+  cid int references country(cid)  
+  )
+
+   ```
+
+![alt text](image-3.png)
+
+
+# SQL join .....
+  
+   1. SQL join are used to join more than one table with common field 
+   2. SQL join are used to join with common field with match data from one table to another table via common field 
+
+## types of join 
+
+   1. join 
+   2. inner join 
+   3. outer join 
+
+      - left join 
+      - right join 
+      - full join 
+   4. cross join 
+
+
+
+# join :
+
+  1. join is used to join more than one table with common filed 
+  2. join is used to join with one table to another with matched data from one table to another 
+
+
+  **syntax**
+
+  ```
+  select 1st table.*, columnname from 1st table join 2nd table on 1st table.common field=2nd table.common field 
+  or
+  select users.*,cname from users join country on users.cid=country.cid; 
+  or
+  select uid,uname,phone,address,cname from users join country on users.cid=country.cid;
+  ``` 
+
+
+# inner join :
+
+  1. inner join is used to join more than one table with common filed 
+  2. inner join is used to join with one table to another with matched data from one table to another 
+
+
+  **syntax**
+
+  ```
+  select 1st table.*, columnname from 1st table inner join 2nd table on 1st table.common field=2nd table.common field 
+  or
+  select users.*,cname from users inner join country on users.cid=country.cid; 
+  or
+  select uid,uname,phone,address,cname from users inner join country on users.cid=country.cid;
+  ``` 
+
+
+# outer join ...
+
+  1. outer join is used to join with common field if data matched one table to another table its join other return null values
+
+    - left join 
+    - right join 
+    - full join (not support in mysql)  
+
+
+## left join ... 
+
+   1. left join is used to join 1st table of left rows with second table of left rows if data matched if not matched return null values 
+
+   **left join**
+
+     ```
+  select 1st table.*, columnname from 1st table left join 2nd table on 1st table.common field=2nd table.common field 
+  or
+  select users.*,cname from users left join country on users.cid=country.cid; 
+  or
+  select uid,uname,phone,address,cname from users left join country on users.cid=country.cid;
+  ``` 
+
+
+
+## right join ... 
+
+   1. right join is used to join 2nd table of right rows with 1st table of right rows if data matched  join all data if not matched return null values 
+
+   **right join**
+
+     ```
+  select 1st table.*, columnname from 1st table right join 2nd table on 1st table.common field=2nd table.common field 
+  or
+  select users.*,cname from users right join country on users.cid=country.cid; 
+  or
+  select uid,uname,phone,address,cname from users right join country on users.cid=country.cid;
+  ``` 
+
+
+# cross join ... 
+
+  1. cross join is used to join data from first table to second table with cross or multiplication of total rows either data matched or not 
+
+  2. cross join is used to return dublicate of data again and again 
+
+  **syntax**
+
+  ```
+  select * from users cross join country;
+  
+  ```
+    
+# SQL functions .....
+
+  1. SQL function is provides  an inbuilt function 
+  2. SQL function is performed some action 
+  2. SQL function  are two types ....
+  
+     - aggrigate function 
+       1. avg()
+       2. max()
+       3. min()
+       4. count()
+       5. sum()
+     - scalar function
+
+       1. first()
+       2. last()
+       3. ucase()
+       4. lcase()  
+
+## examples of SQL function 
+
+1. select avg(salary) as average_salary from employee;
+2. select max(salary) as max_salary from employee;
+3. select min(salary) as min_salary from employee; 
+4. select count(empid) as total_count_employee from employee;
+5. select sum(salary) as sum_salary from employee;    
+6. select first(empname) as first_columndata from employee;
+7. select last(empname) as last_columndata from employee;
+8. select ucase(empname) as uppercase_name from employee;   
+9. select lcase(empname) as lowercase_name from employee; 
+
+# SQL subquery ... 
+
+  1. SQL subquery is used query within another query there we used subquery
+  2. find second highest salary from table employee
+  
+    **subquery**
+
+    ```
+    select max(salary) from employee WHERE salary < (select max(salary) from employee)
+
+    ```
+
+## how to find second highest salary with order by 
+
+   **examples**
+
+   ```
+   Highest salary find 
+
+   select * from employee order by salary desc limit 0,1;
+
+   second highest salary 
+
+   select * from employee order by salary desc limit 1,1;
+
+   Third highest salary 
+
+   select * from employee order by salary desc limit 2,1;
+
+   ```
+
+
+# what is view in SQL how to create view in SQL ? 
+
+
+# what is index in SQL how to create index in SQL ? 
+
+
+# what is windows function in SQL how to create windows function  in SQL ? 
+
+
+# what is trigger  in SQL how to create trigger in SQL ? 
