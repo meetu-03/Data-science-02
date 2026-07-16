@@ -735,14 +735,294 @@ insert into tbl_employee values(null,'forum','forum.jpg',21,652821545,14000,1,'p
 
    ```
 
+# index and indexer ?
 
-# what is view in SQL how to create view in SQL ? 
-
-
-# what is index in SQL how to create index in SQL ? 
+1.Index and indexer are used to increase speed of table
 
 
-# what is windows function in SQL how to create windows function  in SQL ? 
 
 
-# what is trigger  in SQL how to create trigger in SQL ? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.index are used to creat optimized speed of tables
+
+# SQL indexer or index ? 
+
+1. index or indexer create to improved SQL speed of tables 
+2. index are used to create optimized speed of tables 
+3. indexer also create to fast search or lookup data from tables 
+4. indexer are used to create one column or multiple columns of table 
+
+**types of indexer or index**
+
+1) single indexer(create index on one column)
+**examples**
+``` 
+create index indexname on tablename columnname1; 
+or
+create index index_tbl_employee on tbl_employee(empid);
+```
+2) composite indexer(create index on one or multiple column)
+**examples**
+``` 
+create index indexname on tablename (columnname1,columnname2,columnname3,columnname4......);
+or
+
+create index index_tbl_employee on tbl_employee (empid,name,email,mobile,salary) 
+```
+
+
+
+
+# what is view in SQL ? 
+
+1. view is used to create an dublicate table of main table 
+2. view is used to create a virtual tables of main table 
+3. view is used to hide some data from some users there we used view 
+
+# syntax :  
+
+```
+create view viewname as select columnname1, columnname2...from tablename where empid=1;
+or
+create view viewname as select columnname1, columnname2...from tablename
+or
+create view viewname as select * from tablename;
+
+``` 
+# note : view is used to create a dublicate table or virtuals table of main tables 
+
+# Note:   
+
+**examples**
+
+```
+create view viewname as select columnname1, columnname2...from tablename where empid=1;
+
+or
+
+update  tbl_view_users set name='jinal',age=35,mobile=653545454,address='150 feet ring road rajkot',cid=3 where uid=3 
+
+or
+
+delete from tbl_view_users  where uid=3 
+
+```
+
+# SQL windows functions .....
+
+1. SQL windows functions is used to applied calculation | add unique rows to current rows in a tables 
+
+2. SQL windows functions are used to add or set a rows related to the current row without grouping the result into a single row 
+
+
+# types of  windows functions 
+
+1. ROW_NUMBER()
+
+2. RANK()
+
+3. DENSE_RANK()
+
+4. NTILE()
+
+5. LAG()
+
+6. LEAD()
+
+7. FIRST_VALUE()
+
+8. LAST_VALUE()
+
+9. SUM() OVER()
+
+10. AVG() OVER()
+
+11. MIN() OVER()
+
+12) MAX() OVER()
+
+13) COUNT() OVER()
+
+
+
+# create a tables employee ....  
+
+1. create table name with flip_employee
+
+2. ROW_NUMBER(): assingns a unique number to each rows 
+
+```
+select name , salary , ROW_NUMBER() OVER(order by salary desc) from tbl_employee  
+
+```
+
+3. RANK() : provides ranking with gaps for dublicate values 
+
+```
+select name, salary, RANK() OVER(order by salary desc) as rank_no from tbl_employee;  
+```
+
+4. DENSE_RANK() : provides ranking without gaps for dublicate values 
+
+```
+select name, salary, DENSE_RANK() OVER(order by salary desc) as rank_no from tbl_employee;
+
+```
+
+5. NTILE() : divides rows into equal group 
+
+``` 
+select name, salary, NTILE(3) OVER(order by salary desc) as group_no from flip_employee;
+```
+
+6. LAG() : return previous rows values 
+
+```
+select name, salary , LAG(salary, 1) OVER(order by salary desc) as prevoius_salary from tbl_employee; 
+``` 
+
+7. LEAD() : return next row value 
+
+```
+select name, salary , LEAD(salary, 1) OVER(order by salary desc) as prevoius_salary from flip_employee;   
+
+```
+
+8. FIRST_VALUES() : return first values in windows 
+
+```
+select name, salary , FIRST_VALUE(salary) OVER(order by salary desc) as first_max_salary from flip_employee; 
+``` 
+
+
+
+8. LAST_VALUES() : return last values in windows 
+
+```
+select name, salary , LAST_VALUE(salary) OVER(order by salary desc) as LAST_VALUES_SALARY from flip_employee; 
+
+``` 
+
+9. SUM() : running with total in windows 
+
+```
+select name, salary , SUM(salary) OVER(order by salary) as total_sum_SALARY from flip_employee; 
+
+```
+
+
+9. AVG() : running with avg in windows 
+
+```
+select name, salary , AVG(salary) OVER(order by salary) as average_salary from tbl_employee; 
+
+```
+
+10. MIN() OVER(): minimum values in windows
+
+```
+select name, salary , MIN(salary) OVER(order by salary) as MIN_SALARY from tbl_employee;      
+
+```
+
+
+10. MAX() OVER(): maximum values in windows
+
+```
+select name, salary , MAX(salary) OVER(order by salary) as MAX_SALARY from tbl_employee;      
+
+```
+
+11) COUNT() OVER() : count rows of windows
+
+```
+select name, salary , COUNT(empid) OVER(order by empid) as COUNT_EMPLOYEE from tbl_employee;    
+```    
+
+# SQL WITH Clause
+
+1. The SQL WITH clause (Common Table Expression or CTE) defines a temporary result set that can be used within a query. 
+2. It simplifies complex SQL statements, making them easier to read, manage and reuse. 
+
+```
+WITH AvgSalaryCTE (averageValue) AS (
+SELECT AVG(Salary)
+FROM tbl_employee
+)
+SELECT 
+empid,
+name, 
+salary 
+FROM 
+tbl_employee 
+WHERE 
+Salary > (SELECT averageValue FROM AvgSalaryCTE);
+
+```      
