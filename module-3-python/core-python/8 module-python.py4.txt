@@ -1,0 +1,19 @@
+# types of module 
+
+
+
+
+## inbuilt module : definded by python
+
+**sys** or **paltform** or datatime** or **math**
+
+## primary module : definded by python also 
+
+**random** or **calender** or **keyword**
+
+## third party module : third party module is insttalale from pip(python install package)
+
+**pandas** or **numpy** or **matplotlib** or **seaborn**
+
+
+
