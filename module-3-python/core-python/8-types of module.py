@@ -4,7 +4,6 @@
 
 
 ## inbuilt module : definded by python
-
 **sys** or **paltform** or datatime** or **math**
 
 ## primary module : definded by python also 

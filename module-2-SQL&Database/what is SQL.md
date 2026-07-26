@@ -410,7 +410,7 @@ insert into tbl_employee values(null,'forum','forum.jpg',21,652821545,14000,1,'p
 ## commit ....
 
    - commit is used to start transaction and commit(save) data before delete
-   - commit is always used before delete data from tables 
+   - commit is always used after delete data from tables 
   - how to commit data before delete 
   
    # commit .....
