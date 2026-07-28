@@ -1,0 +1,48 @@
+# q-5 dentify the two SQL window functions you would use — one for ranking and one for retrieving the previous row's value — and explain why using window functions with PARTITION BY produces more accurate and maintainable results for this requirement than a GROUP BY with a self-join or correlated subquery approach.
+
+
+ANSWER...
+
+- The two SQL window functions are:
+
+RANK() (or ROW_NUMBER() if unique ranking is required) – used for ranking rows within each group.
+LAG() – used for retrieving the previous row's value.
+
+- Example
+
+SELECT
+    employee_id,
+    department,
+    salary,
+    RANK() OVER(PARTITION BY department ORDER BY salary DESC) AS salary_rank,
+    LAG(salary) OVER(PARTITION BY department ORDER BY salary) AS previous_salary
+FROM employees;
+
+- Why use Window Functions with PARTITION BY?
+
+Accurate results: PARTITION BY divides the data into groups (such as departments) and performs calculations within each group without losing individual rows.
+
+Keeps all rows: Unlike GROUP BY, window functions do not collapse multiple rows into a single row. Every original row remains available.
+
+Better readability: The query is simpler and easier to understand than using multiple joins or subqueries.
+
+Better maintainability: Future changes (such as adding another window function) are easy because no complex self-joins are required.
+
+Better performance: Database engines are generally optimized for window functions, making them more efficient than correlated subqueries or self-joins on large datasets.
+
+- Why not GROUP BY with Self-Join or Correlated Subquery?
+
+GROUP BY aggregates data and returns one row per group, so individual row details are lost.
+
+A self-join makes the query longer and more complex.
+
+A correlated subquery executes repeatedly for each row, which can reduce performance on large tables.
+
+Window functions return row-level details and calculated values together in a single query.
+
+- Conclusion
+
+Ranking function: RANK()
+Previous row function: LAG()
+
+Using window functions with PARTITION BY provides more accurate, readable, maintainable, and efficient results than using GROUP BY with self-joins or correlated subqueries.
