@@ -1,0 +1,10 @@
+# Q-4 Explain which SQL JOIN type must be used to include restaurants with zero orders and describe what would happen if an INNER JOIN were used instead. Justify your choice of join type in terms of how it handles unmatched rows between the two tables
+
+
+ANSWER...
+
+- To include all restaurants, even those that have zero orders, we should use a (LEFT JOIN). A (LEFT JOIN) returns all records from the restaurants table and the matching records from the orders table. If a restaurant has no orders, its order-related columns will contain NULL values, but the restaurant will still appear in the result.
+
+- If an( INNER JOIN) is used, only restaurants that have matching orders will be shown. Restaurants with zero orders will not appear in the report because (INNER JOIN) returns only matched rows from both tables.
+
+- Therefore, (LEFT JOIN) is the correct choice because it keeps all rows from the restaurants table and includes unmatched restaurants with NULL values for the order details. This ensures the report shows every restaurant, including those that have not yet received any orders
