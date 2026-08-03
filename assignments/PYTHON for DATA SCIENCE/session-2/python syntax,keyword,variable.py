@@ -20,22 +20,18 @@ print(coupon_discount)
 
 
  ANSWER...
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 """
+# Flipkart product price checker
+
+price = 1500
+
+if price > 1000:
+    print("Eligible for free delivery")
+else:
+    print("Delivery charges apply")
+
+# eligible for free delivery because price is greater than 1000
+
 
 """
 # 3 .Add both single-line and multi-line comments in your script explaining what each section does, using # for single-line and triple quotes for multi-line comments.
@@ -57,3 +53,27 @@ city = "Morbi"
 print("Name:", name)
 print("Age:", age)
 print("City:", city)
+
+
+
+"""
+
+# 4. .Create variables for an IPL match: team_name, runs_scored, and overs_played.
+Assign appropriate values and print them using the correct naming conventions 
+for Python variables.
+
+ANSWER...
+
+
+"""
+
+# IPL Match Information
+
+team_name = "Chennai Super Kings"
+runs_scored = 185
+overs_played = 20
+
+print("Team Name:", team_name)
+print("Runs Scored:", runs_scored)
+print("Overs Played:", overs_played)
+
