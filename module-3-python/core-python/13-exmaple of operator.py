@@ -201,7 +201,7 @@ meetu patel  (if you need space so add" ")
 """
 name = "Meetu"
 sarname = "Patel"
-
+"""
 print(name + "\n" + sarname)
 meetu
 patel  (if you need new line so add "\n")   
@@ -226,7 +226,7 @@ print(a>b or b<22)
 print(a>b or b>22)
 
 print(not(a<b))
-"""
+
 
 number=[10,20,30,40,50]
 
@@ -254,3 +254,4 @@ sarname="patel"
 print(name+sarname)
 print(name+" "+sarname)
 
+"""
