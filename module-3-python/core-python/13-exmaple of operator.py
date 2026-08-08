@@ -226,7 +226,7 @@ print(a>b or b<22)
 print(a>b or b>22)
 
 print(not(a<b))
-
+"""
 
 number=[10,20,30,40,50]
 
@@ -254,4 +254,3 @@ sarname="patel"
 print(name+sarname)
 print(name+" "+sarname)
 
-"""
