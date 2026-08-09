@@ -375,4 +375,4 @@ if marks>=90:
 elif marks>=35:
 	print("you are pass")
 else:
-	print("you are fail")		
+	print("you are fail")	
