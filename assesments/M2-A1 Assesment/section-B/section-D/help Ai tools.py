@@ -20,6 +20,12 @@ import os
 
 
 # Function to calculate commission
+import json
+import os
+
+import requests
+
+
 def calculate_commission(amount):
     if amount <= 200:
         return amount * 0.10
@@ -65,7 +71,6 @@ else:
 
     with open("data/processed/restaurants.json", "w") as file:
         json.dump(restaurants, file, indent=2)
-
     print("\nRestaurant data saved successfully.")
 
 
