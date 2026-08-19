@@ -1,8 +1,8 @@
 # w.a.p to print name via function 
-# def name():
-#     nm="my name is faiz"
-#     print(nm)
-# name()
+def name():
+     nm="my name is faiz"
+     print(nm)
+name()
 
 
 # functions 
@@ -33,12 +33,12 @@
 #     return fname,lname,age
 # print("Full descriptions  :",fullname("Brijesh","pandey",35))
 
-def fullAdd(fnm,lnm,age):
+'''def fullAdd(fnm,lnm,age):
     firstname="My firstName is :"+fnm+"\n"
     lastname="My lastName is :"+lnm+"\n"
     age="My age is :",age
     print(firstname,lastname,age)
 
 fullAdd("Brijesh","pandey",35)    
-
+'''
     

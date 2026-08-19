@@ -1,37 +1,40 @@
-# single line statement
+# # single line statement
 
 
-a=10
-b=20
+# a=10
+# b=20
 
-if a>b:  print("a is greater than b")
-if a<b: print("a is less than b")  
+# if a>b:  print("a is greater than b")
+# if a<b: print("a is less than b")  
 
-print("a is less than b") if a<b else print("a is greater than b")
+# print("a is less than b") if a<b else print("a is greater than b")
 
-result="a is less than b" if a<b else "a is greater than b"
-print(result)
+# result="a is less than b" if a<b else "a is greater than b"
+# print(result)
 
-#conditional statement 
+# #conditional statement 
 
-a=1
-b=3
+# a=1
+# b=3
 
-if a>b: 
-    print("a is greater than b")
-else:
-    print("a is less than b")       
-
-
-# nested if else statement
-
-a=10
-b=20
-
-if a>b:
-    if a==b:
-        print("a is equal to b")
-    else:
-        print("a is greater than b")
+# if a>b: 
+#     print("a is greater than b")
+# else:
+#     print("a is less than b")       
 
 
+# # nested if else statement
+
+# a=10
+# b=20
+
+# if a>b:
+#     if a==b:
+#         print("a is equal to b")
+#     else:
+#         print("a is greater than b")
+
+
+n=int(input('enter a no.'))
+for i in range(n,n*11,n):
+    print(i)
