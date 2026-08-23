@@ -42,11 +42,3 @@ d='15455'     #string
 a="meetu"
 
 print(type(a))
-
-bill=int(input("enter your used units"))
-if bill<=100:
-	print("your payable bill is:",bill*5)
-elif bill<=200:
-	print("your payable bill is:",(100*5)+(bill-100)*7)
-else:
-	print("your payable bill is:",(100*5)+(100*7)+(bill-200)*10)

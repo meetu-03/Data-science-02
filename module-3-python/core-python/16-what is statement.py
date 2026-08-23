@@ -64,6 +64,7 @@ for i in range(5):
     print(i)
 
 
+while True:
 
     choice = int(input("Enter Login with As: "))
 
