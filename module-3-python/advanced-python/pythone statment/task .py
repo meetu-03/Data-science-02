@@ -171,6 +171,35 @@ for i in number:
 print(smallest)    
 
 
-#
+# #. Print numbers 1 to 10
+# - Use `while`
+# - Don't use `for`
 
+i=0
+while i <=10:
+    print(i)
+    i+=1
+
+# #2. Print numbers 10 to 1
+# - Use `while`
+
+i=10
+while i >=0:
+    print(i)
+    i-=1
+
+
+#### 3. Print all even numbers from 2 to 20
+
+
+for i in range(1,21):
+     if i % 2==0:
+         print(i)
+
+## 4. Print all odd numbers from 1 to 19
+
+
+for i in range(0,20):
+    if i % 2!=0:
+        print(i)
 

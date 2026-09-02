@@ -13,3 +13,5 @@ class car:
 obj=car("BMW",2200000)
 print("car:",obj.name)
 print("price:",obj.price)      
+
+

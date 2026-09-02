@@ -16,5 +16,8 @@ class college:
 
 obj=college("DU","rajkot")
 print(obj.name)
-print(obj.adress)        
+print(obj.adress)       
+
+
+    
         
