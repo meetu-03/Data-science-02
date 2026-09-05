@@ -1,0 +1,2 @@
+# 4.
+# Add error handling to your code so that if the API request fails or returns an error, your script prints a user-friendly message instead of crashing.<br><br><em><strong>Hint:</strong> Check the response status code and handle exceptions from the requests library.</em>

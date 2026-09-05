@@ -1,0 +1,2 @@
+# 3.
+# Fetch a list of users from https://jsonplaceholder.typicode.com/users using requests.get(), then use the .json() method to extract and print the usernames of all users whose email ends with '.org'.

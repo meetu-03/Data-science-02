@@ -1,0 +1,2 @@
+# 1.
+# Use the requests library to fetch the top 10 cryptocurrencies and their current prices in USD from the CoinGecko API (https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1). Print the name and price of each co

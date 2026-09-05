@@ -438,7 +438,7 @@ insert into tbl_employee values(null,'forum','forum.jpg',21,652821545,14000,1,'p
     ROLLBACK;
     SELECT * FROM tbl_employee WHERE empid = 7;
 
-    ``` 
+    ```  
 
 # Note : some database structures not support rollback and commit   
 
