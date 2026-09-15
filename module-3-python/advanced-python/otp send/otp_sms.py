@@ -6,9 +6,9 @@ from twilio.rest import Client
 # YOUR TWILIO DETAILS
 # =========================
 
-ACCOUNT_SID = "ACefe286227c9b537269f734cb7e76a593"
-AUTH_TOKEN = "1a29879925b2b9f8c300c51b5b08951b"
-VERIFY_SERVICE_SID = "VA912a7e2808378fced2c708d66bb220c2"
+ACCOUNT_SID = ""
+AUTH_TOKEN = ""
+VERIFY_SERVICE_SID = ""
 
 # Create Twilio client
 client = Client(ACCOUNT_SID, AUTH_TOKEN)

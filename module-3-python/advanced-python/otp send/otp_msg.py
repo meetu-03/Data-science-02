@@ -5,7 +5,7 @@ import requests
 # MSG91 DETAILS
 # =========================
 
-AUTH_KEY = "570537Ab9gkby536aa552c6P1"
+AUTH_KEY = ""
 
 # =========================
 # MOBILE NUMBER
