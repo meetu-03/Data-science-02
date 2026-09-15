@@ -1,0 +1,2 @@
+4.
+# Build a small script that fetches movies from the OMDB API (http://www.omdbapi.com/) by sending a GET request with query parameters: apikey='demo', s='Avengers'. Print the total number of results found.<br><br><em><strong>Hint:</strong> Pass the parameters using the params={} argument in requests.get().</em>
