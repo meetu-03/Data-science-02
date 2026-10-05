@@ -51,4 +51,22 @@ plt.xlabel("Students")
 plt.ylabel("Average Marks")
 plt.title("Average Marks of Students")
 
+
+# generate_excel_file=df.to_excel("student.xlsx",engine="openpyxl",index=False)
+# print("geneate succecefully:",generate_excel_file)
+
+summry=pd.DataFrame({
+    "total_marks": [df["total"].sum()],
+    "average_marks": [df["average"].mean()]
+})
+
+with pd.ExcelWriter("student_summary.xlsx", engine="openpyxl") as writer:
+    df.to_excel(writer, student1="Student Data", index=False)
+    summry.to_excel(writer, student2="Summary", index=False)
+
+
+
+
+
 plt.show()
+
