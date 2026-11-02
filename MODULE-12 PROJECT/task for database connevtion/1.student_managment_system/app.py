@@ -8,6 +8,11 @@
 
 
 import mysql.connector
+import pandas as pd
+import openpyxl
+import matplotlib.pyplot as plt
+
+    
 
 conn = mysql.connector.connect(
     host="localhost",
@@ -48,9 +53,11 @@ while True:
     print("PRESS 1 FOR ADD STUDENT :  ")
     print("PRESS 2 FOR DELET STUDENT :  ")
     print("PRESS 3 FOR FETCH STUDENT DATA :  ")
-    print("PRESS 4 FOR WXIT PROGRAM :  ")
+    print("PRESS 4 FOR EXCEL SHEET :  ")
+    print("PRESS 5 FOR CHART :  ")
+    print(" PRESS 6 FOR EXITING PROGRAM :  ")
 
-
+    
     choice=int(input("ENTER YOU CHOICE :  "))
 
 
@@ -117,11 +124,30 @@ while True:
 
 
     elif choice == 4:
-        print("exiting programm")
-        break
-    else:
-        print("invalid choice")
-
-     
+        query="""SELECT * FROM STUDENT_MNG"""
+        df=pd.read_sql(query,conn)
+        EXCEL_FILE=df.to_excel("student_data.xlsx", index=False, engine='openpyxl')
+        print("EXCEL FILE GENEREATED SUCCESSFULLY")
        
+    elif choice == 5 :
+        
+        query = """SELECT STANDERD, COUNT(*) AS student_count FROM STUDENT_MNG GROUP BY STANDERD"""
+        df = pd.read_sql(query, conn)
+
+        plt.bar(df['STANDERD'], df['student_count'])
+        plt.xlabel('Standard')
+        plt.ylabel('Number of Students')
+        plt.title('Number of Students by Standard')
+        plt.show()
+
+    elif choice == 6:
+        print("EXITING THE PROGRAM")
+        break
+
+    else :
+        print("invalid choice. Please try again.")
+        
+
+
+
 
