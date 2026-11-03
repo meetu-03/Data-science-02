@@ -1,0 +1,2 @@
+# 2.
+# Send a POST request to https://jsonplaceholder.typicode.com/posts using requests.post() with the data: title='My First Post', body='Hello from Python!', userId=101, and print the status code and the returned JSON response.

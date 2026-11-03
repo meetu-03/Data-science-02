@@ -1,0 +1,2 @@
+5.
+# Automate your data fetch and analysis by scheduling your script to run every hour using the schedule Python library, and add error handling to gracefully manage Binance API rate limits.<br><br><em><strong>Hint:</strong> Catch HTTP 429 errors and implement a retry with exponential backoff.</em>
