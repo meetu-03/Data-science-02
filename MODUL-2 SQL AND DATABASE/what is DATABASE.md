@@ -1,6 +1,6 @@
 # what is DATABASE  ?
 
-  1. database is an schema or structured where we stored an information 
+  1. database is a schema or structured where we stored an information 
   2. database is used to stored data 
   3. database is used to create tables and stored in database 
   4. list of database name ...
